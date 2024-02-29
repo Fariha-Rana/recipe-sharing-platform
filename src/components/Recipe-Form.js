@@ -1,48 +1,28 @@
-// components/RecipeForm.js
-import React, { useState } from 'react';
+"use client"
+import React, { useState } from "react";
+import RecipeCard from "./RecipeCard";
 
 const RecipeForm = () => {
-  const [recipe, setRecipe] = useState({
-    title: '',
-    ingredients: '',
-    instructions: '',
-    cuisine: '',
-    mealType: '',
-    dietaryRestrictions: '',
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setRecipe({ ...recipe, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
+  const [meal, setmeal] = useState("");
+  const [fetchedMeals, setFetchedMeals] = useState(null);
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add logic to save recipe to the database
+    const response = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=${meal}`)
+    const data = await response.json()
+    setFetchedMeals(data.meals)
+    console.log(typeof data.meals)
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      // Dropdown for selecting cuisine
-<select name="cuisine">
-  <option value="italian">Italian</option>
-  <option value="mexican">Mexican</option>
-  {/* Other cuisine options */}
-</select>
-
-// Dropdown for selecting meal type
-<select name="mealType">
-  <option value="breakfast">Breakfast</option>
-  <option value="lunch">Lunch</option>
-  {/* Other meal type options */}
-</select>
-
-// Checkbox for selecting dietary restrictions
-<input type="checkbox" name="vegetarian" /> Vegetarian
-<input type="checkbox" name="glutenFree" /> Gluten-free
-{/* Other dietary restriction options */}
-
-      <button type="submit">Submit Recipe</button>
+    <form onSubmit={handleSubmit} className=" h-full flex-col flex justify-center items-center gap-4 bg-gray-800 p-4">
+      <input value={meal} type="text" onChange={(e) => setmeal(e.target.value)}/>
+      <button type="submit">Get meal</button>
+     <div className="grid grid-cols-3 gap-4">
+     {fetchedMeals?.map((_meal, index ) => (
+        <div key={index} ><RecipeCard recipe={_meal}/></div>
+      ))}
+     </div>
     </form>
   );
 };
