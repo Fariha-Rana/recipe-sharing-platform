@@ -1,6 +1,6 @@
 function CustomLoader() {
   return (
-    <div>
+    <div className="flex justify-center items-center mt-20">
 
     <div className="loader">
       <div>
