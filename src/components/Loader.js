@@ -1,5 +1,7 @@
 function CustomLoader() {
   return (
+    <div>
+
     <div className="loader">
       <div>
         <ul>
@@ -36,6 +38,7 @@ function CustomLoader() {
         </ul>
       </div>
       <span>Loading</span>
+    </div>
     </div>
   );
 }

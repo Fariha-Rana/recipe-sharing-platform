@@ -1,4 +1,4 @@
-import CustomLoader from "@/components/loader"
+import CustomLoader from "@/components/Loader"
 
 function Loader() {
   return (
