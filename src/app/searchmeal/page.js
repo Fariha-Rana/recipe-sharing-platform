@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import RecipeCard from "./RecipeCard";
-import CustomLoader from "@/components/Loader";
+import RecipeCard from "./components/RecipeCard";
+import RecipeFormSkeleton from "./components/Skeleton";
 
 const SearchMeal = () => {
   const [meal, setmeal] = useState("");
@@ -12,20 +12,23 @@ const SearchMeal = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setFetchedMeals(null)
+      if(error) setError("")
+      setFetchedMeals(null);
       setloading(true);
       const response = await fetch(
-        `https://themealdb.com/api/json/v1/1/search.php?s=${meal}`, 
-        // {cache: "no-cache" }
-
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
       );
       const data = await response.json();
-      setFetchedMeals(data.meals);
+      if( !data.meals ){
+        throw new Error(`no recipe found for ${meal}`)
+      }
+      console.log(data)
+      setFetchedMeals(data?.meals);
     } catch (err) {
       setError(err.message);
-    } finally {
+    }finally {
       setloading(false);
-      setmeal("")
+      setmeal("");
     }
   };
 
@@ -36,7 +39,12 @@ const SearchMeal = () => {
         className="flex justify-center items-center gap-4  p-4"
       >
         <div className="search ">
-          <input placeholder="Search for cuisin..." type="text" />
+          <input
+            placeholder="Search for cuisin..."
+            type="text"
+            onChange={(e) => setmeal(e.target.value)}
+            value={meal}
+          />
           <button type="submit">Go</button>
         </div>
       </form>
@@ -51,9 +59,23 @@ const SearchMeal = () => {
           {"Meals list will appear here!"}
         </p>
       )}
-      {loading && <CustomLoader />}
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-6 my-8">
+      {loading && (
+         <div className="flex justify-center items-center mt-20">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-8">
+         <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+            <RecipeFormSkeleton />
+         </div>
+        </div>
+      )}
+
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-6 mx-6  my-4 p-4">
         {fetchedMeals?.map((_meal, index) => (
           <div key={index}>
             <RecipeCard recipe={_meal} />

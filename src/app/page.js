@@ -1,8 +1,9 @@
+"use client"
+import * as React from "react";
+import {Button} from "@nextui-org/button";
 
-function page() {
+export default function App() {
   return (
-    <div>helllo</div>
-  )
+    <Button>Press me</Button>
+  );
 }
-
-export default page

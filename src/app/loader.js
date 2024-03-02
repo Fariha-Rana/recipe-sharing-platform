@@ -1,9 +1,8 @@
-import CustomLoader from "@/components/Loader"
+import React from "react";
+import {Spinner} from "@nextui-org/react";
 
-function Loader() {
+export default function App() {
   return (
-    <div><CustomLoader/></div>
-  )
+    <Spinner />
+  );
 }
-
-export default Loader
