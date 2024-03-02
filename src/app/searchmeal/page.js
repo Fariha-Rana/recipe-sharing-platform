@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import RecipeCard from "./components/RecipeCard";
-import RecipeFormSkeleton from "./components/Skeleton";
+import RecipeCard from "../../components/RecipeCard";
+import RecipeFormSkeleton from "../../components/Skeleton";
 
 const SearchMeal = () => {
   const [meal, setmeal] = useState("");

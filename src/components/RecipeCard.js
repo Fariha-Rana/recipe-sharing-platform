@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { Image } from "@nextui-org/image";
 import {Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure} from "@nextui-org/react"

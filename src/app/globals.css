@@ -24,7 +24,7 @@ html {
   .search input[type="text"] {
     width: 230px;
     padding: 10px;
-    border: none;
+    border: 1px rgb(1, 10, 135) solid;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -50,33 +50,6 @@ html {
   }
   
 
-  .modal {
-      --size: 150px; /* control the size */
-      --color: #dde6e3;
-    
-      background: radial-gradient(
-          circle at 15% 30%,
-          transparent 40%,
-          var(--color) 41%
-        ),
-        radial-gradient(circle at 85% 30%, transparent 40%, var(--color) 41%),
-        radial-gradient(circle at 50% 70%, transparent 40%, var(--color) 41%),
-        radial-gradient(circle at 15% 70%, transparent 40%, var(--color) 41%),
-        radial-gradient(circle at 85% 70%, transparent 40%, var(--color) 41%),
-        linear-gradient(
-          45deg,
-          var(--color) 25%,
-          rgba(0, 0, 0, 0.067) 0,
-          rgba(0, 0, 0, 0.067) 50%,
-          var(--color) 0,
-          var(--color) 75%,
-          #1111 0,
-          #1111 100%,
-          var(--color) 0
-        );
-      background-size: var(--size) var(--size);
-      z-index: -1;
-    }
     
 
 

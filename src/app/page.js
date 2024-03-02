@@ -1,9 +1,13 @@
-"use client"
-import * as React from "react";
-import {Button} from "@nextui-org/button";
+import React from 'react'
 
-export default function App() {
+function page() {
+  // www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+  // www.themealdb.com/api/json/v1/1/categories.php
+  // www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+
   return (
-    <Button>Press me</Button>
-  );
+    <div>filter by categories</div>
+  )
 }
+
+export default page
