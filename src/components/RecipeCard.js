@@ -15,15 +15,16 @@ const RecipeCard = ({ recipe }) => {
         fallbackSrc="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZvb2QlMjBncmFwaGljfGVufDB8fDB8fHww"
         alt={recipe?.strMeal}
       />
-        <p className="bg-yellow-400 w-max text-sm text-neutral p-1 rounded-md m-4 text-center">
+        <span className="w-max bg-yellow-400  text-sm  p-1 rounded-md m-4 text-center">
           🍽️{recipe?.strArea}
-        </p>
-        <h2 className="font-bold text-sm  m-2 h-10">
+        </span>
+        <h2 className="font-bold text-sm  m-2 h-10 underline">
           🥘{recipe?.strMeal}
         </h2>
       <div className=" flex gap-2 mx-4 items-center">
         <Button
-          className="bg-green-600 text-sm  py-1 px-2 rounded my-2"
+          size="sm"
+          className="bg-green-600 text-white text-sm  rounded my-2"
           onPress={onOpen}
         >
           Recipe
