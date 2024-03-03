@@ -46,7 +46,7 @@ export default function RandomDish() {
         </Button>
       </div>
       {randomMeal ? (
-        <div>
+        <div className="w-[20rem]">
           <RecipeCard recipe={randomMeal} />
         </div>
       ) : (
