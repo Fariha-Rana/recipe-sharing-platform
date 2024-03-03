@@ -35,7 +35,7 @@ export const RecipeTitle = ({ title }) => (
 );
 
 export const RecipeButtons = ({ onOpen, youtubeLink }) => (
-  <div className="flex gap-2 mx-4 p-4 items-center">
+  <div className="flex gap-2 mx-4 items-center">
     <Button
       size="sm"
       className="bg-green-600 text-white rounded my-2"
@@ -94,7 +94,7 @@ const RecipeCard = ({ recipe }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div className={`flex flex-col justify-between pb-2 rounded-xl shadow-xl bg-red-600 text-white h-[33rem]`}>
+    <div className={`flex flex-col justify-between pb-2 rounded-xl shadow-xl bg-red-600 text-white h-full`}>
       <RecipeImage
         src={recipe?.strMealThumb}
         fallbackSrc="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZvb2QlMjBncmFwaGljfGVufDB8fDB8fHww"

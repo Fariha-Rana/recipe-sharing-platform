@@ -29,7 +29,7 @@ export default function RandomDish() {
   }, []);
 
   return (
-    <section className="flex flex-col  justify-center items-center mt-4">
+    <section className="flex flex-col  justify-center items-center lg:mt-4 mt-8">
       <div className="flex justify-center items-center gap-2">
         <h1 className=" text-2xl mb-2 bg-white text-green-900 shadow-2xl p-2 rounded-lg border border-green-600">
           {"🍔Random Dish"}

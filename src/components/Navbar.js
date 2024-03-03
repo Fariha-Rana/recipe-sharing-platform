@@ -18,7 +18,7 @@ export default function CustomNavbar() {
       isBordered
       color="success"
     >
-      <NavbarContent className="flex gap-4">
+      <NavbarContent className="flex sm:flex-col gap-4">
         <NavbarBrand>
           <Link href='/' className="font-bold text-lg font-mono  p-1" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>FOODBOOk</Link>
         </NavbarBrand>
