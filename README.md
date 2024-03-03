@@ -1,10 +1,10 @@
-# [Website Url](https://music-platform-fariha-ranas-projects.vercel.app/)
+# [Website Url](https://recipe-sharing-platform-two.vercel.app/)
 
 ## Meals-Recipe-Hub
 
 ## Description
 
-This project is a Meals' Recipes based platform built using Next.js, Tailwind CSS, and the MealDB API. Users can search for recipes, view random dishes, and explore various meal categories.
+This project is a Meals' Recipes based platform built using Next.js, Tailwind CSS, NextUi and the MealDB API. Users can search for recipes, view random dishes, and explore various meal categories.
 
 ## Installation
 

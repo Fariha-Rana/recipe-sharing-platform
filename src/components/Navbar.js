@@ -3,9 +3,6 @@ import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenuItem,
-  NavbarMenu,
   NavbarContent,
   NavbarItem,
   Link,
@@ -13,56 +10,17 @@ import {
 
 import { RandomSvg } from "./RandomSvg";
 
-const menuItems = [
-  { name: "Get random recipe", href: "/randomdish" },
-  {
-    name: "Search recipe by ingredient",
-    href: "/searchrecipe",
-  },
-];
-
 export default function CustomNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Navbar
       isBordered
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
       color="success"
     >
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="flex gap-4">
         <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit">ACME</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden" justify="end">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
-      </NavbarContent>
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.name}-${index}`}>
-            <Link
-              className="w-full underline"
-              color={"success"}
-              href={item.href}
-              size="lg"
-            >
-              {item.name}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-
-      <NavbarContent className="hidden sm:flex gap-4">
-        <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <Link href='/' className="font-bold text-inherit">ACME</Link>
+          <Link href='/' className="font-bold text-lg font-mono  p-1" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>FOODBOOk</Link>
         </NavbarBrand>
         <NavbarItem>
           <Link href="/randomdish" className="underline">

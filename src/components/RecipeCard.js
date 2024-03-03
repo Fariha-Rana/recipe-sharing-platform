@@ -35,7 +35,7 @@ export const RecipeTitle = ({ title }) => (
 );
 
 export const RecipeButtons = ({ onOpen, youtubeLink }) => (
-  <div className="flex gap-2 mx-4 items-center">
+  <div className="flex gap-2 mx-4 p-4 items-center">
     <Button
       size="sm"
       className="bg-green-600 text-white rounded my-2"
