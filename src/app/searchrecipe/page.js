@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import RecipeCard from "../../components/RecipeCard";
 import CustomSkeleton from "@/components/Skeleton";
 
-const searchRecipe = () => {
+const SearchRecipe = () => {
   const [meal, setmeal] = useState("");
   const [fetchedMeals, setFetchedMeals] = useState(null);
   const [loading, setloading] = useState(false);
