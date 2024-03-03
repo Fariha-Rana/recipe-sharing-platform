@@ -22,7 +22,7 @@ html {
   }
   
   .search input[type="text"] {
-    width: 230px;
+    width: 300px;
     padding: 10px;
     border: 1px rgb(1, 10, 135) solid;
     border-radius: 20px;

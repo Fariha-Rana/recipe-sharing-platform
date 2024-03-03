@@ -1,8 +1,5 @@
-import React from "react";
-import {Spinner} from "@nextui-org/react";
+import CustomSkeleton from "@/components/Skeleton";
 
 export default function Loader() {
-  return (
-    <Spinner />
-  );
+  return <CustomSkeleton />;
 }

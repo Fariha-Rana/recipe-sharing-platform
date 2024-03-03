@@ -1,6 +1,6 @@
 import {Card, Skeleton} from "@nextui-org/react";
 
-export default function RecipeFormSkeleton() {
+export function SingleSkeleton() {
   return (
     <Card className="w-[300px]  space-y-5 p-4 " radius="lg">
       <Skeleton className="rounded-lg">
@@ -19,4 +19,22 @@ export default function RecipeFormSkeleton() {
       </div>
     </Card>
   );
+}
+
+
+export default function CustomSkeleton() {
+ return (
+    <div className="flex justify-center items-center mt-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-8">
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+        <SingleSkeleton />
+      </div>
+    </div>
+  )
 }
