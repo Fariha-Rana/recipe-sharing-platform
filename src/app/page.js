@@ -22,7 +22,7 @@ function Home() {
   const [categoryRecipes, setCategoryRecipes] = useState([]);
   const [loader, setLoader] = useState("Initial_Loading");
 
-  async function getData() {
+  const getData = async () =>{
     try {
       setLoader("Further_Loading");
       const response = await fetch(
