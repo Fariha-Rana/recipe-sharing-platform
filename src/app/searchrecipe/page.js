@@ -72,4 +72,4 @@ const SearchRecipe = () => {
   );
 };
 
-export default searchRecipe;
+export default SearchRecipe;
